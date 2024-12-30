@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1: Obtener el código fuente
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Paso 2: Configurar Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      # Paso 3: Instalar dependencias
+      - name: Install dependencies
+        run: npm install
+
+      # Paso 4: Ejecutar las pruebas
+      - name: Run tests
+        run: npm test
+
+      # Paso 5: Construir el proyecto (si es necesario)
+      - name: Build
+        run: npm run build
+
+      # Paso 6: Desplegar (Aquí puedes agregar el paso de despliegue)
+      - name: Deploy
+        run: |
+          echo "Deploying to production..."
+          # Aquí puedes agregar comandos para desplegar, como un script o usar una herramienta de despliegue

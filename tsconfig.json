@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",                      // Asegúrate de estar usando una versión moderna de ES
+    "module": "commonjs",                     // Usar CommonJS para compatibilidad con Node.js
+    "outDir": "./dist",                       // Directorio de salida para los archivos compilados
+    "rootDir": "./src",                       // Directorio raíz para los archivos de código fuente
+    "strict": true,                           // Habilitar todas las comprobaciones estrictas de TypeScript
+    "esModuleInterop": true,                  // Permitir la importación de módulos ES6 en CommonJS
+    "skipLibCheck": true,                     // Saltar la comprobación de los archivos de declaración
+    "forceConsistentCasingInFileNames": true  // Asegura que los nombres de archivos sean consistentes
+  },
+  "include": [
+    "src/**/*"                                // Incluir todos los archivos dentro de src
+  ],
+  "exclude": [
+    "node_modules"                            // Excluir node_modules del proceso de compilación
+  ]
+}
